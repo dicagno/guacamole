@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "./packet";
+package proto;
+
+enum FunctionCode {
+    UNKNOWN = 0x00;
+    PRESET_SINGLE_REGISTER = 0x06;
+    PRESET_MULTIPLE_REGISTERS = 0x10;
+}
+
+message Packet {
+    FunctionCode functionCode = 1;
+    int32 RegistersCount = 2;
+    int32 RegisterAddress = 3;
+    int32 RegisterValue = 4;
+    repeated int32 RegisterValues = 5;
+}

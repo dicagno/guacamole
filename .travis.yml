@@ -1,0 +1,6 @@
+os:
+  - linux
+  - osx
+  - windows
+script:
+  - ./pre-compile.sh
